@@ -133,5 +133,45 @@ msg = "I %7 Python And Although I %7 GSG with Zakaria"
 new_msg = msg.replace("%7", "Love", 1)
 print(new_msg)
 
+# Q20 ---------------------------------------------------------------
 
+def isPalindrome(s):
+    clean_s = ''.join(char.lower() for char in s if char.isalnum())
+    return clean_s == clean_s[::-1]
 
+def isSymmetrical(s):
+    length = len(s)
+
+    if length%2 == 0:
+        mid = length//2
+    else:
+        mid = length//2 + 1
+
+    start1 = 0
+    start2 = mid
+    result = True
+
+    while(start1 < mid and start2 < length):
+        if(s[start1] == s[start2]):
+            start1 += 1
+            start2 += 1
+        else:
+            result = False
+            break
+    if(result): print(s + " is symmetrical.")
+    else: print(s + " is NOT symmetrical.")
+
+test1 = "ZakZak"
+test2 = "Zakaria"
+test3 = "A war at Tarawa."
+test4 = "madam"
+
+result1 = "a palindrome" if isPalindrome(test1) else "NOT a palindrome"
+result2 = "a palindrome" if isPalindrome(test2) else "NOT a palindrome"
+result3 = "a palindrome" if isPalindrome(test3) else "NOT a palindrome"
+result4 = "a palindrome" if isPalindrome(test4) else "NOT a palindrome"
+print(f"{test3} is {result3}.")
+
+print(f"{test1} is {result1}.")
+print(f"{test4} is {result4}.")
+print(f"{test2} is {result2}.")
